@@ -24,9 +24,12 @@ function App() {
                     
                     
                 })
+                 if (res.data.rows == null) {
+                    res.data.rows = 0
+                }
                 reponseGlobal = response
                
-                setactiveUsers(res.data.totalResults);
+                setactiveUsers(res.data.rows);
                 setloggedin(true);
                 const interval = setInterval(function() {
                     fetch ();
@@ -51,7 +54,10 @@ function App() {
                         "Authorization": `Bearer ${reponseGlobal.access_token}`
                     }
                 })
-                setactiveUsers(res.data.totalResults);
+                if (res.data.rows == null) {
+                    res.data.rows = 0
+                }
+                setactiveUsers(res.data.rows);
                 console.log(res.data.totalResults)
             } catch (err) {
                 console.log("something died")

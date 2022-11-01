@@ -34,8 +34,6 @@ let dayNameS = (event.toLocaleDateString('en-US', options1));
 var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 var dayNametom = days[event.getDay() + 1];
 var dayNameafttom = days[event.getDay() + 2];
-
-
 if (!!!!isLoading) {
   
   return   <div id="sunDiv"><img id="loading" src={giffyLoad} alt="" /></div>;
