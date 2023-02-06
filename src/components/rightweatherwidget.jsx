@@ -4,9 +4,9 @@ import DayIconLabel from "./dayiconlabel";
 
 const WidgetRender = (props) => {
     const {weatherData} = props
-    const {dayNameS} = props
-    const {dayNametom} = props
-    const {dayNameafttom} = props
+    const {dayNameToday} = props
+    const {dayNameTomorrow} = props
+    const {dayNameDayAfterTomorrow} = props
     return(
 <div className="info-side">
     <div className="today-info-container">
@@ -25,13 +25,13 @@ const WidgetRender = (props) => {
 
       <ul className="week-list">
         <li className="active">
-          <DayIconLabel day={dayNameS} temp={weatherData.liveweer[0].temp} />
+          <DayIconLabel day={dayNameToday} temp={weatherData.liveweer[0].temp} />
         </li>
         <li>
-          <DayIconLabel day={dayNametom} temp={weatherData.liveweer[0].d1tmax} />
+          <DayIconLabel day={dayNameTomorrow} temp={weatherData.liveweer[0].d1tmax} />
         </li>
         <li>
-          <DayIconLabel day={dayNameafttom} temp={weatherData.liveweer[0].d2tmax} />
+          <DayIconLabel day={dayNameDayAfterTomorrow} temp={weatherData.liveweer[0].d2tmax} />
         </li>
         <div className="clear"></div>
       </ul>

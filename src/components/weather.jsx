@@ -55,6 +55,8 @@ const Weather = () => {
   const dayNameTomorrow = getNextDate(1).toLocaleDateString("en-US", dateOption);
   const dayNameDayAfterTomorrow = getNextDate(2).toLocaleDateString("en-US", dateOption);
 
+
+
   if (isLoading) {
     return (
       <div id="sunDiv">
@@ -64,16 +66,17 @@ const Weather = () => {
   }
   return (
     <div className="container">
+      
+      <LeftWeatherWidget
+        weatherData={weatherData}
+        dayName={dayName}
+        displayDate={displayDate}
+      />
       <RightWeatherWidget 
         weatherData={weatherData}
         dayNameToday={dayNameToday}
         dayNameTomorrow={dayNameTomorrow}
         dayNameDayAfterTomorrow={dayNameDayAfterTomorrow}
-      />
-      <LeftWeatherWidget
-        weatherData={weatherData}
-        dayName={dayName}
-        displayDate={displayDate}
       />
     </div>
   );
